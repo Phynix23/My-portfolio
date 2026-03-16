@@ -267,6 +267,48 @@
               </div>
             </div>
          </section>
+
+         <!-- FOOTER -->
+          <footer class="footer">
+            <div class="container">
+              <div class="footer-grid">
+                <div class="footer-brand">
+                  <a href="#" class="footer-logo"><span class="logo-bracket">&lt;</span>Abuoma David <span class="logo-bracket">/&gt;</span></a>
+                  <p class="footer-tagline">Building systems that scale, <br>mentoring young developers and builders who build them.</p>
+                </div>
+                <div class="footer-links"><h4>navigation</h4><ul><li><a href="#about"></a></li><li><a href="#skills">skills</a></li><li><a href="#projects">projects</a></li><li><a href="#contact">contact</a></li></ul></div>
+                <div class="footer-links"><h4>resources</h4><ul><li><a href="#">blog</a></li><li><a href="#">talks</a></li><li><a href="#">mentorship</a></li><li><a href="#">cv (pdf)</a></li></ul></div>
+                <div class="footer-legal"><p>© 2026 Abuoma David · did this...</p><p>I know we can work together</p><p class="footer-commit"><span class="commit-hash">About Me:</span><span class="commit-message">AD's portfolio</span></p></div></div>
+              </div>
+              <div class="footer-bottom"><div class="footer-tech-stack"><span>I Code</span><span>·</span><span>I Build</span><span>·</span><span>I Design</span></div></div>
+            </div>
+          </footer>
+
+  
+  <script>
+    (function() {
+      const sections = document.querySelectorAll('.section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // optional: keep observing to avoid flicker – we can unobserve after first reveal
+            // but it's fine to leave it; visible class stays.
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' }); // trigger when 15% visible
+
+      sections.forEach(section => observer.observe(section));
+
+      // manually trigger for any already visible (like if hero is huge)
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add('visible');
+        }
+      });
+    })();
+  </script>
    </main>
 </body>
 </html>
