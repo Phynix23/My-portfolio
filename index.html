@@ -6,309 +6,323 @@
   <meta name="description" content="Abuoma David · software developer · graphic designer · website builder">
   <meta name="keywords" content="developer, designer, html, css, python">
   <title>Abuoma David · website developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  
-  <!-- NAVBAR · STICKY · RESPONSIVE -->
-   <nav class="navbar">
-    <div class="nav-container">
-      <a href="#" class="navbar__logo">
-        <span class="logo-bracket">&lt;</span>
-        Abuoma David
-        <span class="logo-bracket">/&gt;</span>
-      </a>
-      <ul class="navbar__links">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Project</a></li>
-        <li><a href="#contacts" class="nav-link"></a>Contacts</li>
-      </ul>
-      <button class="mobile-menu-btn" aria-label="menu"><span></span><span></span><span></span></button>
-    </div>
-   </nav>
+<body class="bg-[#0a0c12] text-[#e5e9f0] font-['Inter'] antialiased">
 
-   <!-- HERO · FULL VIEWPOINT · IMPACTFUL -->
-   <header class="hero">
-    <div class="hero__content">
-      <div class="hero__eyebrow-wrapper">
-        <span class="hero__eyebrow-line"></span>
-        <p class="hero__eyebrow">Website developer · Webapp builder</p>
-        <span class="hero__eyebrow-line"></span>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Section Indicators -->
+  <div class="section-indicator" id="sectionIndicator"></div>
+
+  <!-- NAVBAR -->
+  <nav class="sticky top-0 z-50 bg-[#0a0c12]/90 backdrop-blur-xl border-b border-[#2a3442] py-3">
+    <div class="w-[90%] max-w-[1300px] mx-auto flex justify-between items-center">
+      <a href="#" class="font-mono text-[1.4rem] font-medium text-[#e5e9f0] no-underline flex items-center gap-1 transition-all duration-150 hover:gap-1.5">
+        <span class="text-[#4ec9b0] font-light transition-all duration-150 group-hover:text-[#569cd6]">&lt;</span>
+        Abuoma David
+        <span class="text-[#4ec9b0] font-light transition-all duration-150 group-hover:text-[#569cd6]">/&gt;</span>
+      </a>
+      <ul class="hidden md:flex gap-10 list-none">
+        <li><a href="#about" class="font-mono text-[#a9b8d0] no-underline text-sm transition-all duration-150 pb-1 border-b-2 border-transparent hover:text-[#e5e9f0] hover:border-b-2 hover:border-[#4ec9b0] relative after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-0.5 after:bg-[#4ec9b0] after:transition-all after:duration-250 hover:after:w-full">About</a></li>
+        <li><a href="#skills" class="font-mono text-[#a9b8d0] no-underline text-sm transition-all duration-150 pb-1 border-b-2 border-transparent hover:text-[#e5e9f0] hover:border-b-2 hover:border-[#4ec9b0]">Skills</a></li>
+        <li><a href="#projects" class="font-mono text-[#a9b8d0] no-underline text-sm transition-all duration-150 pb-1 border-b-2 border-transparent hover:text-[#e5e9f0] hover:border-b-2 hover:border-[#4ec9b0]">Project</a></li>
+        <li><a href="#contact" class="font-mono text-[#a9b8d0] no-underline text-sm transition-all duration-150 pb-1 border-b-2 border-transparent hover:text-[#e5e9f0] hover:border-b-2 hover:border-[#4ec9b0]">Contacts</a></li>
+      </ul>
+      <button class="md:hidden bg-transparent border-none cursor-pointer p-2">
+        <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
+        <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
+        <span class="block w-6 h-0.5 bg-white"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="min-h-screen flex items-center relative overflow-hidden bg-gradient-radial from-[#141a24] to-[#0a0c12]">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(86,156,214,0.03)_0%,transparent_30%),radial-gradient(circle_at_80%_70%,rgba(78,201,176,0.03)_0%,transparent_35%),linear-gradient(135deg,transparent_0%,rgba(10,12,18,0.5)_100%)] pointer-events-none"></div>
+    <div class="max-w-[1000px] mx-auto px-8 md:px-16 relative z-10">
+      <div class="flex items-center gap-8 mb-8">
+        <span class="flex-1 h-px bg-gradient-to-r from-transparent via-[#569cd6] to-transparent"></span>
+        <p class="font-mono text-sm text-[#4ec9b0] uppercase tracking-[4px] whitespace-nowrap md:whitespace-normal md:text-center">Website developer · Webapp builder</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-transparent via-[#569cd6] to-transparent"></span>
       </div>
-      <h1 class="hero__title">
-        <span class="title-greeting">Hi, I'm</span>
-        <span class="title-name">Abuoma David</span>
+      <h1 class="mb-8">
+        <span class="block text-[0.5em] font-normal text-[#6f7e9c] mb-2 font-mono">Hi, I'm</span>
+        <span class="block gradient-text text-[clamp(3rem,8vw,5.5rem)]">Abuoma David</span>
       </h1>
-      <p class="hero__tagline">
+      <p class="text-[1.3rem] text-[#a9b8d0] max-w-[720px] mb-16 border-l-4 border-[#d4b57e] pl-8 leading-relaxed">
         I build and design responsive websites that handle millions of requests without breaking a sweat. Currently focused on building one of the most functioning church websites and a responsive webapp, which will have high performance and features.
       </p>
-      <div class="hero__stats">
-        <div class="stat-item">
-          <span class="stat-number">3+</span>
-          <span class="stat-label">years experience</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">3+</span>
-          <span class="stat-label">Projects shipped</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">&infin;</span>
-          <span class="stat-label">curiosity</span>
-        </div>
+      <div class="flex gap-8 mb-12 flex-wrap">
+        <div class="flex flex-col"><span class="text-[2.5rem] font-medium text-[#569cd6] font-mono leading-none">3+</span><span class="text-xs uppercase tracking-[2px] text-[#6f7e9c]">years experience</span></div>
+        <div class="flex flex-col"><span class="text-[2.5rem] font-medium text-[#569cd6] font-mono leading-none">3+</span><span class="text-xs uppercase tracking-[2px] text-[#6f7e9c]">Projects shipped</span></div>
+        <div class="flex flex-col"><span class="text-[2.5rem] font-medium text-[#569cd6] font-mono leading-none">∞</span><span class="text-xs uppercase tracking-[2px] text-[#6f7e9c]">curiosity</span></div>
       </div>
-      <div class="hero__buttons">
-        <a href="#projects" class="btn btn--primary">
-        <span>view my work</span>
-        <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      <div class="flex gap-8 flex-wrap mb-12">
+        <a href="#projects" class="inline-flex items-center gap-2 px-8 py-3 font-medium font-mono rounded-md border-2 border-[#569cd6] bg-[#569cd6] text-[#0a0c12] hover:bg-transparent hover:text-[#569cd6] hover:shadow-[0_0_15px_rgba(86,156,214,0.3)] hover:-translate-y-0.5 transition-all duration-250">
+          <span>view my work</span>
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
         </a>
-        <a href="#contact" class="btn btn--outline">
+        <a href="#contact" class="inline-flex items-center gap-2 px-8 py-3 font-medium font-mono rounded-md border-2 border-[#3d4c64] bg-transparent text-[#a9b8d0] hover:border-[#4ec9b0] hover:text-[#4ec9b0] hover:bg-[#4ec9b0]/5 hover:-translate-y-0.5 transition-all duration-250">
           <span>let's talk</span>
-          <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20">
-          <path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.57 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke="currentColor" stroke-width="2" fill="none"/>
-          </svg>
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.57 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke="currentColor" stroke-width="2" fill="none"/></svg>
         </a>
       </div>
-      <div class="hero__scroll-indicator">
+      <div class="flex items-center gap-4 font-mono text-sm text-[#6f7e9c] uppercase tracking-[2px]">
         <span>scroll</span>
-        <div class="scroll-line"></div>
+        <div class="w-[60px] h-px bg-gradient-to-r from-[#4ec9b0] to-transparent relative overflow-hidden">
+          <div class="absolute top-0 left-[-100%] w-full h-full bg-[#569cd6] animate-[scroll_2s_infinite]"></div>
+        </div>
       </div>
     </div>
-   </header>
+  </header>
 
-   <main>
+  <main>
     <!-- ABOUT SECTION -->
-     <section class="section about-section" id="about">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle">01 · who I am</span>
-          <h2>Developer, chemist</h2>
-          <div class="section-header-line"></div>
+    <section class="section py-24 md:py-32 border-b border-[#2a3442] opacity-0 transition-opacity duration-800" id="about">
+      <div class="w-[90%] max-w-[1300px] mx-auto">
+        <div class="section-header mb-16 relative opacity-0 translate-y-[-30px] transition-all duration-600">
+          <span class="font-mono text-sm text-[#4ec9b0] uppercase tracking-[4px] block mb-4">01 · who I am</span>
+          <h2 class="text-[clamp(2.2rem,5vw,3.2rem)] font-medium mb-8">Developer, chemist</h2>
+          <div class="w-20 h-0.5 bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full"></div>
         </div>
 
-        <div class="about-content">
-          <div class="about-text">
-            <p class="about-intro">
-              I'm Abuoma David — a website builder, webapp developer with 3 years of experience building systems that are reliable, scalable, and maintainable. I've led teams, designed distributed websites processing millions of events.
-            </p>
-            <p>
-              my journey into tech started in Aba, where I taught myself to code while studying industrial chemistry. I fell in love with programming and never looked back. Today, I specialize in <strong>React, ReactNative, and python</strong>, with deep experience in HTML and CSS and high-performance database.
-            </p>
-            <p>
-              I believe great software is built by great teams. That's why I'm passionate about mentoring, code reviews, and creating documentation that actually helps people. When I'm not coding, I'm probably in the church rehearsing or singing, or leading new things to add to the society.
-            </p>
-            <div class="about-quote">
-              <div class="about-quote">
-              <svg class="quote-icon" viewBox="0 0 24 24" width="32" height="32">
-              <path d="M9.5 4.5L4.5 9.5L9.5 14.5" stroke="currentColor" stroke-width="2" fill="none"/>
-              <path d="M14.5 4.5L19.5 9.5L14.5 14.5" stroke="currentColor" stroke-width="2" fill="none"/>
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_0.9fr] gap-16 items-start">
+          <div class="text-[#a9b8d0]">
+            <p class="text-[1.3rem] text-[#e5e9f0] mb-6 font-medium">I'm Abuoma David — a website builder, webapp developer with 3 years of experience building systems that are reliable, scalable, and maintainable.</p>
+            <p class="mb-6 text-[1.05rem]">My journey into tech started in Aba, where I taught myself to code while studying industrial chemistry. I fell in love with programming and never looked back. Today, I specialize in <strong class="text-[#e5e9f0]">React, ReactNative, and python</strong>, with deep experience in HTML and CSS and high-performance database.</p>
+            <p class="mb-6 text-[1.05rem]">I believe great software is built by great teams. That's why I'm passionate about mentoring, code reviews, and creating documentation that actually helps people. When I'm not coding, I'm probably in the church rehearsing or singing, or leading new things to add to the society.</p>
+            <div class="mt-12 p-8 bg-[#141a24] border-l-4 border-[#d4b57e] rounded-r-lg">
+              <svg class="text-[#d4b57e] opacity-50 mb-4" viewBox="0 0 24 24" width="32" height="32">
+                <path d="M9.5 4.5L4.5 9.5L9.5 14.5" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M14.5 4.5L19.5 9.5L14.5 14.5" stroke="currentColor" stroke-width="2" fill="none"/>
               </svg>
-              <blockquote>
-              "The best way to predict the future is to build it — with clean code, solid structure, and respect for the people who will maintain it."
-              </blockquote>
+              <blockquote class="text-[1.2rem] italic text-[#e5e9f0] leading-relaxed">"The best way to predict the future is to build it — with clean code, solid structure, and respect for the people who will maintain it."</blockquote>
             </div>
           </div>
 
-          <div class="about-card">
-            <div class="about-image-wrapper">
-              <img src="Photo.jpeg" alt="Abuoma David profile" class="image-caption">
-              <span class="caption-name">Abuoma David</span><br>
-              <span class="caption-title">Website Developer</span>
-              <span class="caption-title">Graphics Designer</span>
-              <span class="caption-title">Data Analytics</span>
-             </div>
+          <div class="bg-[#141a24] border border-[#2a3442] p-8 rounded-xl">
+            <div class="text-center mb-8">
+              <div class="max-w-full rounded-lg border-2 border-[#3d4c64] transition-all duration-250 hover:border-[#4ec9b0] hover:scale-105 bg-gradient-to-br from-[#2a3442] to-[#1e2633] flex items-center justify-center text-[#4ec9b0] font-mono text-[1.2rem] min-h-[240px] border-dashed"><img src="Photo.jpeg" alt="Aboma David"></div>
+              <div class="mt-4"><span class="text-[1.2rem] font-medium text-[#e5e9f0]">Abuoma David</span><br><span class="text-sm text-[#6f7e9c] font-mono">Website Developer</span><br><span class="text-sm text-[#6f7e9c] font-mono">Graphics Designer</span><br><span class="text-sm text-[#6f7e9c] font-mono">Data Analytics</span></div>
             </div>
-            <div class="about-info-grid">
-             <div class="info-item">
-              <span class="info-label">location</span>
-              <span class="info-value">Lagos, Nigeria</span>
-             </div>
-             <div class="info-item">
-              <span class="info-label">timezone</span>
-              <span class="info-value">WAT (GMT+1)</span>
-             </div>
-             <div class="info-item">
-              <span class="info-label">language</span>
-              <span class="info-value">English, Igbo, Pidgin</span>
-             </div>
-             <div class="info-item">
-              <span class="info-label">open to</span>
-              <span class="info-value">contracts</span>
+            <div class="grid grid-cols-2 gap-8 mb-8">
+              <div class="flex flex-col gap-1"><span class="text-[0.7rem] uppercase tracking-[2px] text-[#6f7e9c]">location</span><span class="text-base text-[#e5e9f0] font-medium">Lagos, Nigeria</span></div>
+              <div class="flex flex-col gap-1"><span class="text-[0.7rem] uppercase tracking-[2px] text-[#6f7e9c]">timezone</span><span class="text-base text-[#e5e9f0] font-medium">WAT (GMT+1)</span></div>
+              <div class="flex flex-col gap-1"><span class="text-[0.7rem] uppercase tracking-[2px] text-[#6f7e9c]">language</span><span class="text-base text-[#e5e9f0] font-medium">English, Igbo, Pidgin</span></div>
+              <div class="flex flex-col gap-1"><span class="text-[0.7rem] uppercase tracking-[2px] text-[#6f7e9c]">open to</span><span class="text-base text-[#e5e9f0] font-medium">contracts</span></div>
             </div>
-           </div>
-           <a href="cv-abuoma-david.pdf" class="btn download-btn" download>
-            <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20">
-            <path d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" stroke="currentColor" stroke-width="2" fill="none"/>
-            </svg>
-            <span>download CV</span>
-           </a>
+            <a href="David_Abuoma_CV.pdf" class="inline-flex items-center justify-center gap-2 w-full px-8 py-3 font-medium font-mono rounded-md border-2 border-[#d4b57e] bg-transparent text-[#d4b57e] hover:bg-[#d4b57e] hover:text-[#0a0c12] transition-all duration-250">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+              <span>download CV</span>
+            </a>
           </div>
         </div>
       </div>
-     </section>
+    </section>
 
-     <!-- SKILLS SECTION -->
-      <section class="section skills-section" id="skills">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-sbtitle">02 · technical depth</span>
-            <h2>Tools I reach for every day</h2>
-            <div class="section-header-line"></div>
-          </div>
-          <div class="skills-container">
-            <div class="skills-category">
-              <h3><span class="cetegory-icon">⚙️</span>Programming Languages</h3>
-              <div class="skills-grid">
-                <div class="skill-card"><span class="skill-name">HTML</span><span class="skill-level">Professional</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
-                <div class="skill-card"><span class="skill-name">CSS</span><span class="skill-level">Professional</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-                <div class="skill-card"><span class="skill-name">JavaScript</span><span class="skill-level">Beginner</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
-                <div class="skill-card"><span class="skill-name">Python</span><span class="skill-level">Beginner</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-                <div class="skill-card"><span class="skill-name">C++</span><span class="skill-level">advanced</span><div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div></div>
-                <div class="skill-card"><span class="skill-name">SQL</span><span class="skill-level">advanced</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-              </div>
+    <!-- SKILLS SECTION -->
+    <section class="section py-24 md:py-32 border-b border-[#2a3442] opacity-0 transition-opacity duration-800" id="skills">
+      <div class="w-[90%] max-w-[1300px] mx-auto">
+        <div class="section-header mb-16 relative opacity-0 translate-y-[-30px] transition-all duration-600">
+          <span class="font-mono text-sm text-[#4ec9b0] uppercase tracking-[4px] block mb-4">02 · technical depth</span>
+          <h2 class="text-[clamp(2.2rem,5vw,3.2rem)] font-medium mb-8">Tools I reach for every day</h2>
+          <div class="w-20 h-0.5 bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full"></div>
+        </div>
+
+        <div class="flex flex-col gap-16">
+          <div>
+            <h3 class="text-[1.4rem] text-[#e5e9f0] mb-8 flex items-center gap-4 font-mono"><span class="text-[1.8rem]">⚙️</span>Programming Languages</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div class="skill-card bg-[#141a24] border border-[#2a3442] p-6 rounded-lg transition-all duration-250 hover:border-[#569cd6] hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-[30px] animate-on-scroll"><span class="text-[1.1rem] font-medium text-[#e5e9f0] block mb-1">HTML</span><span class="text-sm text-[#4ec9b0] font-mono block mb-4">Professional</span><div class="h-1 bg-[#2a3442] rounded-full overflow-hidden"><div class="skill-fill h-full bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full w-0" style="--target-width:95%"></div></div></div>
+              <div class="skill-card bg-[#141a24] border border-[#2a3442] p-6 rounded-lg transition-all duration-250 hover:border-[#569cd6] hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-[30px] animate-on-scroll"><span class="text-[1.1rem] font-medium text-[#e5e9f0] block mb-1">CSS</span><span class="text-sm text-[#4ec9b0] font-mono block mb-4">Professional</span><div class="h-1 bg-[#2a3442] rounded-full overflow-hidden"><div class="skill-fill h-full bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full w-0" style="--target-width:90%"></div></div></div>
+              <div class="skill-card bg-[#141a24] border border-[#2a3442] p-6 rounded-lg transition-all duration-250 hover:border-[#569cd6] hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-[30px] animate-on-scroll"><span class="text-[1.1rem] font-medium text-[#e5e9f0] block mb-1">JavaScript</span><span class="text-sm text-[#4ec9b0] font-mono block mb-4">Beginner</span><div class="h-1 bg-[#2a3442] rounded-full overflow-hidden"><div class="skill-fill h-full bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full w-0" style="--target-width:70%"></div></div></div>
+              <div class="skill-card bg-[#141a24] border border-[#2a3442] p-6 rounded-lg transition-all duration-250 hover:border-[#569cd6] hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-[30px] animate-on-scroll"><span class="text-[1.1rem] font-medium text-[#e5e9f0] block mb-1">Python</span><span class="text-sm text-[#4ec9b0] font-mono block mb-4">Beginner</span><div class="h-1 bg-[#2a3442] rounded-full overflow-hidden"><div class="skill-fill h-full bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full w-0" style="--target-width:80%"></div></div></div>
+              <div class="skill-card bg-[#141a24] border border-[#2a3442] p-6 rounded-lg transition-all duration-250 hover:border-[#569cd6] hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-[30px] animate-on-scroll"><span class="text-[1.1rem] font-medium text-[#e5e9f0] block mb-1">C++</span><span class="text-sm text-[#4ec9b0] font-mono block mb-4">Advanced</span><div class="h-1 bg-[#2a3442] rounded-full overflow-hidden"><div class="skill-fill h-full bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full w-0" style="--target-width:60%"></div></div></div>
+              <div class="skill-card bg-[#141a24] border border-[#2a3442] p-6 rounded-lg transition-all duration-250 hover:border-[#569cd6] hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-[30px] animate-on-scroll"><span class="text-[1.1rem] font-medium text-[#e5e9f0] block mb-1">SQL</span><span class="text-sm text-[#4ec9b0] font-mono block mb-4">Advanced</span><div class="h-1 bg-[#2a3442] rounded-full overflow-hidden"><div class="skill-fill h-full bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full w-0" style="--target-width:90%"></div></div></div>
             </div>
-            <div class="skills-category">
-              <h3><span class="cetegory-icon">☁️</span> Data Analytics</h3>
-              <div class="skills-grid">
-                <div class="skill-card"><span class="skill-name">Excel</span><span class="skill-level">Advanced</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
-                <div class="skill-card"><span class="skill-name">Power Bi</span><span class="skill-level">Advanced</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-                <div class="skill-card"><span class="skill-name">Tableau</span><span class="skill-level">Beginner</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
-                <div class="skill-card"><span class="skill-name">Adobe</span><span class="skill-level">Beginner</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-                <div class="skill-card"><span class="skill-name">Illustrator</span><span class="skill-level">advanced</span><div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div></div>
-                <div class="skill-card"><span class="skill-name">Canva</span><span class="skill-level">advanced</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-              </div>
+          </div>
+          <div>
+            <h3 class="text-[1.4rem] text-[#e5e9f0] mb-8 flex items-center gap-4 font-mono"><span class="text-[1.8rem]">☁️</span>Data Analytics</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div class="skill-card bg-[#141a24] border border-[#2a3442] p-6 rounded-lg transition-all duration-250 hover:border-[#569cd6] hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-[30px] animate-on-scroll"><span class="text-[1.1rem] font-medium text-[#e5e9f0] block mb-1">Excel</span><span class="text-sm text-[#4ec9b0] font-mono block mb-4">Advanced</span><div class="h-1 bg-[#2a3442] rounded-full overflow-hidden"><div class="skill-fill h-full bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full w-0" style="--target-width:95%"></div></div></div>
+              <div class="skill-card bg-[#141a24] border border-[#2a3442] p-6 rounded-lg transition-all duration-250 hover:border-[#569cd6] hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-[30px] animate-on-scroll"><span class="text-[1.1rem] font-medium text-[#e5e9f0] block mb-1">Power Bi</span><span class="text-sm text-[#4ec9b0] font-mono block mb-4">Advanced</span><div class="h-1 bg-[#2a3442] rounded-full overflow-hidden"><div class="skill-fill h-full bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full w-0" style="--target-width:90%"></div></div></div>
+              <div class="skill-card bg-[#141a24] border border-[#2a3442] p-6 rounded-lg transition-all duration-250 hover:border-[#569cd6] hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-[30px] animate-on-scroll"><span class="text-[1.1rem] font-medium text-[#e5e9f0] block mb-1">Tableau</span><span class="text-sm text-[#4ec9b0] font-mono block mb-4">Beginner</span><div class="h-1 bg-[#2a3442] rounded-full overflow-hidden"><div class="skill-fill h-full bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full w-0" style="--target-width:70%"></div></div></div>
+              <div class="skill-card bg-[#141a24] border border-[#2a3442] p-6 rounded-lg transition-all duration-250 hover:border-[#569cd6] hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-[30px] animate-on-scroll"><span class="text-[1.1rem] font-medium text-[#e5e9f0] block mb-1">Adobe</span><span class="text-sm text-[#4ec9b0] font-mono block mb-4">Beginner</span><div class="h-1 bg-[#2a3442] rounded-full overflow-hidden"><div class="skill-fill h-full bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full w-0" style="--target-width:80%"></div></div></div>
+              <div class="skill-card bg-[#141a24] border border-[#2a3442] p-6 rounded-lg transition-all duration-250 hover:border-[#569cd6] hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-[30px] animate-on-scroll"><span class="text-[1.1rem] font-medium text-[#e5e9f0] block mb-1">Illustrator</span><span class="text-sm text-[#4ec9b0] font-mono block mb-4">Advanced</span><div class="h-1 bg-[#2a3442] rounded-full overflow-hidden"><div class="skill-fill h-full bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full w-0" style="--target-width:60%"></div></div></div>
+              <div class="skill-card bg-[#141a24] border border-[#2a3442] p-6 rounded-lg transition-all duration-250 hover:border-[#569cd6] hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-[30px] animate-on-scroll"><span class="text-[1.1rem] font-medium text-[#e5e9f0] block mb-1">Canva</span><span class="text-sm text-[#4ec9b0] font-mono block mb-4">Advanced</span><div class="h-1 bg-[#2a3442] rounded-full overflow-hidden"><div class="skill-fill h-full bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full w-0" style="--target-width:90%"></div></div></div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- PROJECTS SECTION -->
-       <section class="section projects-section" id="projects">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-subtitle">03 · projects I've worked on</span>
-            <h2>Responsive website</h2>
-            <div class="section-header-line"></div>
+    <!-- PROJECTS SECTION -->
+    <section class="section py-24 md:py-32 border-b border-[#2a3442] opacity-0 transition-opacity duration-800" id="projects">
+      <div class="w-[90%] max-w-[1300px] mx-auto">
+        <div class="section-header mb-16 relative opacity-0 translate-y-[-30px] transition-all duration-600">
+          <span class="font-mono text-sm text-[#4ec9b0] uppercase tracking-[4px] block mb-4">03 · projects I've worked on</span>
+          <h2 class="text-[clamp(2.2rem,5vw,3.2rem)] font-medium mb-8">Responsive website</h2>
+          <div class="w-20 h-0.5 bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12 mb-16">
+          <div class="project-card bg-[#141a24] border border-[#2a3442] p-8 rounded-xl transition-all duration-250 hover:border-[#4ec9b0] hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden opacity-0 translate-y-[30px] animate-on-scroll before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-0.5 before:bg-gradient-to-r before:from-[#569cd6] before:to-[#4ec9b0] before:translate-x-[-100%] before:transition-transform before:duration-600 hover:before:translate-x-0">
+            <div class="font-mono text-sm text-[#4ec9b0] mb-4">01</div>
+            <h3 class="text-[2rem] font-medium mb-4">VIBE</h3>
+            <div class="flex flex-wrap gap-2 mb-8"><span class="bg-[#2a3442] px-4 py-1 rounded-full text-sm font-mono text-[#569cd6] border border-[#2a3442]">ReactNative</span><span class="bg-[#2a3442] px-4 py-1 rounded-full text-sm font-mono text-[#569cd6] border border-[#2a3442]">HTML</span><span class="bg-[#2a3442] px-4 py-1 rounded-full text-sm font-mono text-[#569cd6] border border-[#2a3442]">CSS</span><span class="bg-[#2a3442] px-4 py-1 rounded-full text-sm font-mono text-[#569cd6] border border-[#2a3442]">Typescript</span></div>
+            <p class="text-[#a9b8d0] mb-8 leading-relaxed">A social media app made for communications. It has the features of your regular social media apps and more.</p>
+            <div class="flex gap-8 mb-8 py-6 border-t border-b border-[#2a3442]"><div class="flex flex-col"><span class="text-[1.3rem] font-medium text-[#d4b57e] font-mono">1.2k</span><span class="text-[0.7rem] uppercase tracking-[1px] text-[#6f7e9c]">stars</span></div><div class="flex flex-col"><span class="text-[1.3rem] font-medium text-[#d4b57e] font-mono">200+</span><span class="text-[0.7rem] uppercase tracking-[1px] text-[#6f7e9c]">forks</span></div><div class="flex flex-col"><span class="text-[1.3rem] font-medium text-[#d4b57e] font-mono">2</span><span class="text-[0.7rem] uppercase tracking-[1px] text-[#6f7e9c]">contributors</span></div></div>
+            <a href="#" class="inline-flex items-center gap-2 text-[#4ec9b0] no-underline font-mono text-sm transition-all duration-150 hover:text-[#569cd6] hover:gap-3"><span>view on github</span><svg viewBox="0 0 24 24" width="18" height="18"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke="currentColor" stroke-width="2" fill="none"/></svg></a>
           </div>
-          <div class="projects-grid">
-            <div class="project-card">
-              <div class="project-number">01</div>
-              <h3>VIBE</h3>
-              <div class="project-tags"><span>ReactNative</span><span>HTML</span><span>CSS</span><span>Typescript</span></div>
-              <p class="project-description">A social meida app made for communications. It has the features of your regular social media apps and more.</p>
-              <div class="project-metrics"><div class="metric"><span class="metric-value">1.2k</span><span class="metric-label">stars</span></div><div class="metric"><span class="metric-value">200+</span><span class="metric-label">forks</span></div><div class="metric"><span class="metric-value">2</span><span class="metric-label">contributors</span></div></div>
-              <a href="#" class="project-link"><span>view on github</span><svg viewBox="0 0 24 24" width="18" height="18"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke="currentColor" stroke-width="2" fill="none"/></svg></a>
-            </div>
-            <div class="project-card">
-              <div class="project-number">02</div>
-              <h3>Dominion City HQ website</h3>
-              <div class="project-tags"><span>HTML</span><span>CSS</span><span>Javascript</span></div>
-              <p class="project-description">A responsive church website built and designed for Dominion city headquarters Lagos.</p>
-              <div class="project-metrics"><div class="metric"><span class="metric-value">800</span><span class="metric-label">stars</span></div><div class="metric"><span class="metric-value">200+</span><span class="metric-label">users</span></div></div>
-              <a href="#" class="project-link"><span>view on github</span><svg viewBox="0 0 24 24" width="18" height="18"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke="currentColor" stroke-width="2" fill="none"/></svg></a>
-            </div>
-            <div class="project-card">
-              <div class="project-number">03</div>
-              <h3>AbiaWay Transit</h3>
-              <div class="project-tags"><span>React</span><span>HTML</span><span>CSS</span><span>Javascript</span></div>
-              <p class="project-description">An uber type of webapp built and developed for easy access of bus booking and transit.</p>
-              <div class="project-metrics"><div class="metric"><span class="metric-value">1.2k</span><span class="metric-label">stars</span></div><div class="metric"><span class="metric-value">200+</span><span class="metric-label">forks</span></div><div class="metric"><span class="metric-value">3</span><span class="metric-label">contributors</span></div></div>
-              <a href="#" class="project-link"><span>view on github</span><svg viewBox="0 0 24 24" width="18" height="18"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke="currentColor" stroke-width="2" fill="none"/></svg></a>
-            </div>
+          <div class="project-card bg-[#141a24] border border-[#2a3442] p-8 rounded-xl transition-all duration-250 hover:border-[#4ec9b0] hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden opacity-0 translate-y-[30px] animate-on-scroll before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-0.5 before:bg-gradient-to-r before:from-[#569cd6] before:to-[#4ec9b0] before:translate-x-[-100%] before:transition-transform before:duration-600 hover:before:translate-x-0">
+            <div class="font-mono text-sm text-[#4ec9b0] mb-4">02</div>
+            <h3 class="text-[2rem] font-medium mb-4">Dominion City HQ website</h3>
+            <div class="flex flex-wrap gap-2 mb-8"><span class="bg-[#2a3442] px-4 py-1 rounded-full text-sm font-mono text-[#569cd6] border border-[#2a3442]">HTML</span><span class="bg-[#2a3442] px-4 py-1 rounded-full text-sm font-mono text-[#569cd6] border border-[#2a3442]">CSS</span><span class="bg-[#2a3442] px-4 py-1 rounded-full text-sm font-mono text-[#569cd6] border border-[#2a3442]">Javascript</span></div>
+            <p class="text-[#a9b8d0] mb-8 leading-relaxed">A responsive church website built and designed for Dominion city headquarters Lagos.</p>
+            <div class="flex gap-8 mb-8 py-6 border-t border-b border-[#2a3442]"><div class="flex flex-col"><span class="text-[1.3rem] font-medium text-[#d4b57e] font-mono">800</span><span class="text-[0.7rem] uppercase tracking-[1px] text-[#6f7e9c]">stars</span></div><div class="flex flex-col"><span class="text-[1.3rem] font-medium text-[#d4b57e] font-mono">200+</span><span class="text-[0.7rem] uppercase tracking-[1px] text-[#6f7e9c]">users</span></div></div>
+            <a href="#" class="inline-flex items-center gap-2 text-[#4ec9b0] no-underline font-mono text-sm transition-all duration-150 hover:text-[#569cd6] hover:gap-3"><span>view on github</span><svg viewBox="0 0 24 24" width="18" height="18"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke="currentColor" stroke-width="2" fill="none"/></svg></a>
           </div>
-          <div class="projects-cta">
-            <a href="#" class="btn btn--outline"><span>see all projects on github</span><svg viewBox="0 0 24 24" width="18" height="18"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke="currentColor" stroke-width="2" fill="none"/></svg></a>
+          <div class="project-card bg-[#141a24] border border-[#2a3442] p-8 rounded-xl transition-all duration-250 hover:border-[#4ec9b0] hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden opacity-0 translate-y-[30px] animate-on-scroll before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-0.5 before:bg-gradient-to-r before:from-[#569cd6] before:to-[#4ec9b0] before:translate-x-[-100%] before:transition-transform before:duration-600 hover:before:translate-x-0">
+            <div class="font-mono text-sm text-[#4ec9b0] mb-4">03</div>
+            <h3 class="text-[2rem] font-medium mb-4">AbiaWay Transit</h3>
+            <div class="flex flex-wrap gap-2 mb-8"><span class="bg-[#2a3442] px-4 py-1 rounded-full text-sm font-mono text-[#569cd6] border border-[#2a3442]">React</span><span class="bg-[#2a3442] px-4 py-1 rounded-full text-sm font-mono text-[#569cd6] border border-[#2a3442]">HTML</span><span class="bg-[#2a3442] px-4 py-1 rounded-full text-sm font-mono text-[#569cd6] border border-[#2a3442]">CSS</span><span class="bg-[#2a3442] px-4 py-1 rounded-full text-sm font-mono text-[#569cd6] border border-[#2a3442]">Javascript</span></div>
+            <p class="text-[#a9b8d0] mb-8 leading-relaxed">An uber type of webapp built and developed for easy access of bus booking and transit.</p>
+            <div class="flex gap-8 mb-8 py-6 border-t border-b border-[#2a3442]"><div class="flex flex-col"><span class="text-[1.3rem] font-medium text-[#d4b57e] font-mono">1.2k</span><span class="text-[0.7rem] uppercase tracking-[1px] text-[#6f7e9c]">stars</span></div><div class="flex flex-col"><span class="text-[1.3rem] font-medium text-[#d4b57e] font-mono">200+</span><span class="text-[0.7rem] uppercase tracking-[1px] text-[#6f7e9c]">forks</span></div><div class="flex flex-col"><span class="text-[1.3rem] font-medium text-[#d4b57e] font-mono">3</span><span class="text-[0.7rem] uppercase tracking-[1px] text-[#6f7e9c]">contributors</span></div></div>
+            <a href="#" class="inline-flex items-center gap-2 text-[#4ec9b0] no-underline font-mono text-sm transition-all duration-150 hover:text-[#569cd6] hover:gap-3"><span>view on github</span><svg viewBox="0 0 24 24" width="18" height="18"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke="currentColor" stroke-width="2" fill="none"/></svg></a>
           </div>
         </div>
-       </section>
+        <div class="text-center mt-16">
+          <a href="#" class="inline-flex items-center gap-2 px-8 py-3 font-medium font-mono rounded-md border-2 border-[#3d4c64] bg-transparent text-[#a9b8d0] hover:border-[#4ec9b0] hover:text-[#4ec9b0] hover:bg-[#4ec9b0]/5 transition-all duration-250"><span>see all projects on github</span><svg viewBox="0 0 24 24" width="18" height="18"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke="currentColor" stroke-width="2" fill="none"/></svg></a>
+        </div>
+      </div>
+    </section>
 
-       <!-- MENTORSHIP SECTION -->
-        <section class="section mentorship-section">
-          <div class="container">
-            <div class="mentorship-card">
-              <div class="mentorship-quote">
-                <svg class="quote-open" viewBox="0 0 24 24" width="48" height="48"><path d="M9 12H5a1 1 0 01-1-1V7a1 1 0 011-1h4a1 1 0 011 1v8c0 2.5-2 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M19 12h-4a1 1 0 01-1-1V7a1 1 0 011-1h4a1 1 0 011 1v8c0 2.5-2 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-               <blockquote>The builder I aspire to be—the one whose work I study, whose principles I admire—builds with clarity, ships with confidence, and teaches with patience. This portfolio is a reflection of that pursuit.</blockquote>
-              <div class="mentorship-attribution"><span class="attribution-line"></span><span class="attribution-text">inspired by my role model</span><span class="attribution-line"></span></div>
-              </div>
-              <div class="mentorship-content">
-                <h3>Why I build what I build</h3>
-                <p>The engineer who most shaped my career doesn't know it-but his blog post, conference talks, and open-source contributions taught me that architecture is about trade-offs, and character is about owning them.</p>
-                <p>He taught me to value clairty over cleverness, reliability over hype, and to build things that outlast you. I hope one day to have that kind of impact on the next generation.</p>
-                <div class="mentorship-stats"><div class="mentorship-stat"><span class="stat-number">50+</span><span class="stat-label">blog posts studied</span></div><div class="mentorship-stat"><span class="stat-number">12</span><span class="stat-label">conference talks</span></div><div class="mentorship-stat"><span class="stat-number">&infin;</span><span class="stat-label">lessons learned</span></div></div>
-              </div>
+    <!-- MENTORSHIP SECTION -->
+    <section class="section py-24 md:py-32 border-b border-[#2a3442] opacity-0 transition-opacity duration-800" id="mentorship">
+      <div class="w-[90%] max-w-[1300px] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 bg-gradient-to-br from-[#141a24] to-[#0a0c12] border border-[#4ec9b0] rounded-2xl p-12 md:p-16 relative overflow-hidden opacity-0 translate-y-[30px] animate-on-scroll">
+          <div class="relative">
+            <svg class="text-[#b889cc] opacity-20 mb-8" viewBox="0 0 24 24" width="48" height="48"><path d="M9 12H5a1 1 0 01-1-1V7a1 1 0 011-1h4a1 1 0 011 1v8c0 2.5-2 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M19 12h-4a1 1 0 01-1-1V7a1 1 0 011-1h4a1 1 0 011 1v8c0 2.5-2 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+            <blockquote class="text-[1.5rem] font-normal leading-relaxed text-[#e5e9f0] mb-8">The builder I aspire to be—the one whose work I study, whose principles I admire—builds with clarity, ships with confidence, and teaches with patience. This portfolio is a reflection of that pursuit.</blockquote>
+            <div class="flex items-center gap-4 font-mono text-[#6f7e9c] text-sm uppercase tracking-[2px]"><span class="flex-1 h-px bg-gradient-to-r from-transparent via-[#b889cc] to-transparent"></span><span>inspired by my role model</span><span class="flex-1 h-px bg-gradient-to-r from-transparent via-[#b889cc] to-transparent"></span></div>
+          </div>
+          <div>
+            <h3 class="text-[#b889cc] text-[1.6rem] font-medium mb-6">Why I build what I build</h3>
+            <p class="text-[#a9b8d0] mb-6 text-[1.05rem]">The engineer who most shaped my career doesn't know it-but his blog post, conference talks, and open-source contributions taught me that architecture is about trade-offs, and character is about owning them.</p>
+            <p class="text-[#a9b8d0] mb-8 text-[1.05rem]">He taught me to value clarity over cleverness, reliability over hype, and to build things that outlast you. I hope one day to have that kind of impact on the next generation.</p>
+            <div class="flex gap-8 mt-8"><div class="flex flex-col"><span class="text-[2rem] font-medium text-[#b889cc] font-mono">50+</span><span class="text-[0.7rem] uppercase tracking-[1px] text-[#6f7e9c]">blog posts studied</span></div><div class="flex flex-col"><span class="text-[2rem] font-medium text-[#b889cc] font-mono">12</span><span class="text-[0.7rem] uppercase tracking-[1px] text-[#6f7e9c]">conference talks</span></div><div class="flex flex-col"><span class="text-[2rem] font-medium text-[#b889cc] font-mono">∞</span><span class="text-[0.7rem] uppercase tracking-[1px] text-[#6f7e9c]">lessons learned</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section py-24 md:py-32 border-b border-[#2a3442] opacity-0 transition-opacity duration-800" id="contact">
+      <div class="w-[90%] max-w-[1300px] mx-auto">
+        <div class="section-header mb-16 relative opacity-0 translate-y-[-30px] transition-all duration-600">
+          <span class="font-mono text-sm text-[#4ec9b0] uppercase tracking-[4px] block mb-4">04 · reach out</span>
+          <h2 class="text-[clamp(2.2rem,5vw,3.2rem)] font-medium mb-8">Let's talk system, code, or ideas.</h2>
+          <div class="w-20 h-0.5 bg-gradient-to-r from-[#569cd6] to-[#4ec9b0] rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 bg-[#141a24] border border-[#2a3442] rounded-2xl p-12 md:p-16 opacity-0 translate-y-[30px] animate-on-scroll">
+          <div>
+            <div class="font-mono text-[2rem] text-[#4ec9b0] mb-8 flex items-center gap-2 break-all"><span class="text-[#d4b57e] text-[2rem]">→</span>davidabuoma4@gmail.com</div>
+            <div class="flex flex-col gap-6 mb-8"><div class="flex items-baseline gap-8 py-2 border-b border-dashed border-[#2a3442]"><span class="min-w-[100px] font-mono text-sm text-[#6f7e9c] uppercase tracking-[1px]">Location</span><span class="text-[#e5e9f0] font-medium">Lagos, Nigeria</span></div><div class="flex items-baseline gap-8 py-2 border-b border-dashed border-[#2a3442]"><span class="min-w-[100px] font-mono text-sm text-[#6f7e9c] uppercase tracking-[1px]">timezone</span><span class="text-[#e5e9f0] font-medium">WAT (GMT+1)</span></div><div class="flex items-baseline gap-8 py-2 border-b border-dashed border-[#2a3442]"><span class="min-w-[100px] font-mono text-sm text-[#6f7e9c] uppercase tracking-[1px]">availability</span><span class="text-[#e5e9f0] font-medium">open to select contracts</span></div></div>
+            <div class="flex items-center gap-4"><span class="w-2 h-2 bg-[#4ec9b0] rounded-full animate-pulse"></span><span class="text-sm text-[#6f7e9c] italic">typically responds within 24 hours</span></div>
+          </div>
+          <div>
+            <h3 class="text-[1.2rem] text-[#e5e9f0] mb-8 font-mono">find me elsewhere</h3>
+            <div class="grid grid-cols-1 gap-4">
+              <a href="https://github.com/Phynix23" class="flex items-center gap-4 p-4 bg-[#0a0c12] border border-[#2a3442] rounded-lg text-[#a9b8d0] no-underline transition-all duration-150 hover:border-[#4ec9b0] hover:text-[#4ec9b0] hover:translate-x-1" target="_blank"><span class="text-[#d4b57e] font-mono text-[1.2rem]"></span><span class="flex-1 text-sm">github</span><span class="opacity-0 transition-all duration-150 group-hover:opacity-100 group-hover:translate-x-1">→</span></a>
+              <a href="https://www.datascienceportfol.io/abuomadavid" class="flex items-center gap-4 p-4 bg-[#0a0c12] border border-[#2a3442] rounded-lg text-[#a9b8d0] no-underline transition-all duration-150 hover:border-[#4ec9b0] hover:text-[#4ec9b0] hover:translate-x-1" target="_blank"><span class="text-[#d4b57e] font-mono text-[1.2rem]"></span><span class="flex-1 text-sm">datascienceportfolio</span><span class="opacity-0 transition-all duration-150 group-hover:opacity-100 group-hover:translate-x-1">→</span></a>
+              <a href="https://www.facebook.com/share/1DZpUTBJrA/" class="flex items-center gap-4 p-4 bg-[#0a0c12] border border-[#2a3442] rounded-lg text-[#a9b8d0] no-underline transition-all duration-150 hover:border-[#4ec9b0] hover:text-[#4ec9b0] hover:translate-x-1" target="_blank"><span class="text-[#d4b57e] font-mono text-[1.2rem]"></span><span class="flex-1 text-sm">facebook</span><span class="opacity-0 transition-all duration-150 group-hover:opacity-100 group-hover:translate-x-1">→</span></a>
+              <a href="www.linkedin.com/in/abuomadavid" class="flex items-center gap-4 p-4 bg-[#0a0c12] border border-[#2a3442] rounded-lg text-[#a9b8d0] no-underline transition-all duration-150 hover:border-[#4ec9b0] hover:text-[#4ec9b0] hover:translate-x-1" target="_blank"><span class="text-[#d4b57e] font-mono text-[1.2rem]"></span><span class="flex-1 text-sm">LinkedIn</span><span class="opacity-0 transition-all duration-150 group-hover:opacity-100 group-hover:translate-x-1">→</span></a>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <!-- CONTACT SECTION -->
-         <section class="section contact-section" id="contact">
-            <div class="container">
-              <div class="section-header">
-                <span class="section-subtitle">04 · reach out</span>
-                <h2>Let's talk system, code, or ideas.</h2>
-                <div class="section-header-line"></div>
-              </div>
-              <div class="contact-container">
-                <div class="contact-info">
-                  <div class="contact-email-large"><span class="email-prefix">&rarr;</span>davidabuoma4@gmail.com</div>
-                  <div class="contact-details"><div class="contact-detail"><span class="detail-label">Location</span><span class="detail-value">Lagos, Nigeria</span></div><div class="contact-detail"></div><div class="contact-detail"><span class="detail-label">timezone</span><span class="detail-value">WAT (GMT+1)</span></div><div class="contact-detail"><span class="detail-label">availability</span><span class="detail-value">open to select contracts</span></div></div>
-                  <div class="contact-repsonse"><span class="response-indicator"><span class="response-text">typically responds within 24 hours</span></span></div>
-                </div>
-                <div class="contact-channels">
-                  <h3>find me elsewhere</h3>
-                  <div class="channels-grid">
-                    <a href="https://github.com/Phynix23" class="channel" target="_blank"><span class="channel-icon"></span><span class="channel-name">github</span><span class="channel-arrow">&rarr;</span></a>
-                    <a href="https://www.datascienceportfol.io/abuomadavid" class="channel" target="_blank"><span class="channel-icon"></span><span class="channel-name">datascienceportfolio</span><span class="channel-arrow">&rarr;</span></a>
-                    <a href="https://www.facebook.com/share/1DZpUTBJrA/" class="channel" target="_blank"><span class="channel-icon"></span><span class="channel-name">facebook</span><span class="channel-arrow">&rarr;</span></a>
-                    <a href="www.linkedin.com/in/abuomadavid" class="channel" target="_blank"><span class="channel-icon"></span><span class="channel-name">LinkedIn</span><span class="channel-arrow">&rarr;</span></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-         </section>
+    <!-- FOOTER -->
+    <footer class="bg-[#0a0c12] border-t border-[#2a3442] py-16 md:py-24">
+      <div class="w-[90%] max-w-[1300px] mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1.5fr] gap-16 mb-16">
+          <div class="flex flex-col gap-4"><a href="#" class="font-mono text-[1.4rem] text-[#e5e9f0] no-underline inline-flex items-center gap-1"><span class="text-[#4ec9b0]">&lt;</span>Abuoma David <span class="text-[#4ec9b0]">/&gt;</span></a><p class="text-[#6f7e9c] text-sm leading-relaxed">Building systems that scale, <br>mentoring young developers and builders who build them.</p></div>
+          <div><h4 class="text-base text-[#6f7e9c] uppercase tracking-[2px] mb-6 font-mono">navigation</h4><ul class="list-none flex flex-col gap-4"><li><a href="#about" class="text-[#a9b8d0] no-underline text-sm transition-all duration-150 hover:text-[#4ec9b0] border-b border-transparent hover:border-b hover:border-[#4ec9b0]">About</a></li><li><a href="#skills" class="text-[#a9b8d0] no-underline text-sm transition-all duration-150 hover:text-[#4ec9b0] border-b border-transparent hover:border-b hover:border-[#4ec9b0]">skills</a></li><li><a href="#projects" class="text-[#a9b8d0] no-underline text-sm transition-all duration-150 hover:text-[#4ec9b0] border-b border-transparent hover:border-b hover:border-[#4ec9b0]">projects</a></li><li><a href="#contact" class="text-[#a9b8d0] no-underline text-sm transition-all duration-150 hover:text-[#4ec9b0] border-b border-transparent hover:border-b hover:border-[#4ec9b0]">contact</a></li></ul></div>
+          <div><h4 class="text-base text-[#6f7e9c] uppercase tracking-[2px] mb-6 font-mono">resources</h4><ul class="list-none flex flex-col gap-4"><li><a href="#" class="text-[#a9b8d0] no-underline text-sm transition-all duration-150 hover:text-[#4ec9b0] border-b border-transparent hover:border-b hover:border-[#4ec9b0]">blog</a></li><li><a href="#" class="text-[#a9b8d0] no-underline text-sm transition-all duration-150 hover:text-[#4ec9b0] border-b border-transparent hover:border-b hover:border-[#4ec9b0]">talks</a></li><li><a href="#" class="text-[#a9b8d0] no-underline text-sm transition-all duration-150 hover:text-[#4ec9b0] border-b border-transparent hover:border-b hover:border-[#4ec9b0]">mentorship</a></li><li><a href="#" class="text-[#a9b8d0] no-underline text-sm transition-all duration-150 hover:text-[#4ec9b0] border-b border-transparent hover:border-b hover:border-[#4ec9b0]">cv (pdf)</a></li></ul></div>
+          <div class="text-[#6f7e9c] text-sm flex flex-col gap-4"><p>© 2026 Abuoma David · did this...</p><p>I know we can work together</p><p class="font-mono text-sm mt-6 pt-4 border-t border-[#2a3442]"><span class="text-[#d4b57e]">About Me:</span><span class="text-[#a9b8d0]"> AD's portfolio</span></p></div>
+        </div>
+        <div class="pt-12 border-t border-[#2a3442]"><div class="flex gap-4 justify-center font-mono text-sm text-[#6f7e9c] flex-wrap"><span>I Code</span><span>·</span><span>I Build</span><span>·</span><span>I Design</span></div></div>
+      </div>
+    </footer>
+  </main>
 
-         <!-- FOOTER -->
-          <footer class="footer">
-            <div class="container">
-              <div class="footer-grid">
-                <div class="footer-brand">
-                  <a href="#" class="footer-logo"><span class="logo-bracket">&lt;</span>Abuoma David <span class="logo-bracket">/&gt;</span></a>
-                  <p class="footer-tagline">Building systems that scale, <br>mentoring young developers and builders who build them.</p>
-                </div>
-                <div class="footer-links"><h4>navigation</h4><ul><li><a href="#about"></a></li><li><a href="#skills">skills</a></li><li><a href="#projects">projects</a></li><li><a href="#contact">contact</a></li></ul></div>
-                <div class="footer-links"><h4>resources</h4><ul><li><a href="#">blog</a></li><li><a href="#">talks</a></li><li><a href="#">mentorship</a></li><li><a href="#">cv (pdf)</a></li></ul></div>
-                <div class="footer-legal"><p>© 2026 Abuoma David · did this...</p><p>I know we can work together</p><p class="footer-commit"><span class="commit-hash">About Me:</span><span class="commit-message">AD's portfolio</span></p></div></div>
-              </div>
-              <div class="footer-bottom"><div class="footer-tech-stack"><span>I Code</span><span>·</span><span>I Build</span><span>·</span><span>I Design</span></div></div>
-            </div>
-          </footer>
-
-  
   <script>
     (function() {
       const sections = document.querySelectorAll('.section');
+      const sectionIndicator = document.getElementById('sectionIndicator');
+      const scrollProgress = document.getElementById('scrollProgress');
+      
+      // Create section indicators
+      sections.forEach((section, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('indicator-dot');
+        dot.addEventListener('click', () => {
+          section.scrollIntoView({ behavior: 'smooth' });
+        });
+        sectionIndicator.appendChild(dot);
+      });
+
+      const dots = document.querySelectorAll('.indicator-dot');
+
+      // Intersection Observer
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            // optional: keep observing to avoid flicker – we can unobserve after first reveal
-            // but it's fine to leave it; visible class stays.
+            const index = Array.from(sections).indexOf(entry.target);
+            dots.forEach((dot, i) => {
+              if (i === index) dot.classList.add('active');
+              else dot.classList.remove('active');
+            });
           }
         });
-      }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' }); // trigger when 15% visible
+      }, { threshold: 0.3 });
 
       sections.forEach(section => observer.observe(section));
 
-      // manually trigger for any already visible (like if hero is huge)
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          section.classList.add('visible');
-        }
+      // Scroll progress
+      window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        scrollProgress.style.width = scrolled + '%';
       });
+
+      // Smooth scroll for nav links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // Initial check
+      setTimeout(() => {
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top < window.innerHeight) section.classList.add('visible');
+        });
+      }, 100);
     })();
   </script>
-   </main>
 </body>
 </html>
